@@ -15,9 +15,9 @@ router.get('/', function (req, res, next) {
   let url = fullUrl(req)
   console.log(url)
   let c = querystring.decode(url)
-  console.log(c)
+  console.log(c.length)
   let code = Object.keys(c)
-  res.render('index', { title: 'Api Gmail', code: c['code'] });
+  res.render('index', { title: 'Api Gmail', code: c[0] });
 });
 
 module.exports = router;
