@@ -13,6 +13,7 @@ function fullUrl(req) {
 /* GET home page. */
 router.get('/', function (req, res, next) {
   let url = fullUrl(req)
+  console.log(url)
   let c = querystring.decode(url)
   let code = Object.keys(c)
   res.render('index', { title: 'Api Gmail', code: code });
